@@ -1,0 +1,36 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+my:
+
+homeassistant:
+  auth_providers:
+    - type: homeassistant
+    - type: trusted_networks
+      trusted_networks:
+        - 10.6.11.0/24 
+        - 10.200.200.0/24
+      trusted_users:
+        10.6.11.0/24: ce2b6beefef44c5bbf9b95e019e7a326
+        10.200.200.0/24: ce2b6beefef44c5bbf9b95e019e7a326
+      allow_bypass_login: true
+
+input_select:
+  woonkamer_scenes:
+    name: Woonkamer scenes
+    options:
+      - scene.woonkamer_werken
+      - scene.licht_overdag
+      - scene.licht_s_avonds
+      - scene.bank_chill
+
+http:
+  base_url: home-assistant.svc.gweggemans.nl
+  use_x_forwarded_for: true
+  trusted_proxies:
+  - 10.6.11.101
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml

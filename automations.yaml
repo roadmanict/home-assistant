@@ -1,0 +1,244 @@
+- id: '1671813453696'
+  alias: Turn off kerstboom
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:00:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 4fe1602ef15878b3bbd74d6665d8b1e3
+    entity_id: switch.kerstboom
+    domain: switch
+  mode: single
+- id: '1671813498441'
+  alias: Turn on Kerstboom
+  description: ''
+  trigger:
+  - platform: time
+    at: 07:15:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 4fe1602ef15878b3bbd74d6665d8b1e3
+    entity_id: switch.kerstboom
+    domain: switch
+  mode: single
+- id: '1671829878559'
+  alias: Dimmer woonkamer off
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2f51ff75b241655f91918339d48ab75f
+    type: action
+    subtype: off_press_release
+    discovery_id: 0x0017880103cbbd22 action_off_press_release
+  condition: []
+  action:
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id: light.woonkamer
+  mode: single
+- id: '1671829944474'
+  alias: Dimmer woonkamer on
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2f51ff75b241655f91918339d48ab75f
+    type: action
+    subtype: on_press_release
+    discovery_id: 0x0017880103cbbd22 action_on_press_release
+  condition:
+  - condition: state
+    entity_id: light.woonkamer
+    state: 'off'
+  action:
+  - service: homeassistant.turn_on
+    data: {}
+    target:
+      entity_id: light.woonkamer
+  mode: single
+- id: '1671830018151'
+  alias: Dimmer keuken on
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 282691ba73bbd34fa39abb788d27dbf5
+    type: action
+    subtype: on_press_release
+    discovery_id: 0x00178801020f3c22 action_on_press_release
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data: {}
+    target:
+      entity_id: light.keuken
+  mode: single
+- id: '1671830056409'
+  alias: Dimmer keuken off
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 282691ba73bbd34fa39abb788d27dbf5
+    type: action
+    subtype: off_press_release
+    discovery_id: 0x00178801020f3c22 action_off_press_release
+  condition: []
+  action:
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id: light.keuken
+  mode: single
+- id: '1672242550279'
+  alias: Turn off lights iOS widget
+  description: Turn off lights iOS widget
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: Lampen uit
+  condition: []
+  action:
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id:
+      - light.keuken
+      - light.woonkamer
+      - light.slaapkamer
+  mode: single
+- id: '1672675997552'
+  alias: Cycle Woonkamer Scenes
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2f51ff75b241655f91918339d48ab75f
+    type: action
+    subtype: on_press
+    discovery_id: 0x0017880103cbbd22 action_on_press
+  condition:
+  - condition: state
+    entity_id: light.woonkamer
+    state: 'on'
+  action:
+  - service: input_select.select_next
+    data: {}
+    target:
+      entity_id: input_select.woonkamer_scenes
+  - service: scene.turn_on
+    target:
+      entity_id: '{{ states(''input_select.woonkamer_scenes'') }}'
+  mode: single
+- id: '1672677921810'
+  alias: Woonkamer Dimmer
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2f51ff75b241655f91918339d48ab75f
+    type: action
+    subtype: up_press
+    discovery_id: 0x0017880103cbbd22 action_up_press
+    id: woonkamer_dim_up
+  - platform: device
+    domain: mqtt
+    device_id: 2f51ff75b241655f91918339d48ab75f
+    type: action
+    subtype: down_press
+    discovery_id: 0x0017880103cbbd22 action_down_press
+    id: woonkamer_dim_down
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: woonkamer_dim_up
+      sequence:
+      - service: light.turn_on
+        data:
+          brightness_step_pct: 5
+          transition: 1
+        target:
+          entity_id: light.woonkamer
+    - conditions:
+      - condition: trigger
+        id: woonkamer_dim_down
+      sequence:
+      - service: light.turn_on
+        data:
+          brightness_step: -5
+          transition: 1
+  mode: single
+- id: '1672686984614'
+  alias: Woonkamer dimmer hold
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2f51ff75b241655f91918339d48ab75f
+    type: action
+    subtype: up_hold
+    discovery_id: 0x0017880103cbbd22 action_up_hold
+    id: woonkamer_dim_up
+  - platform: device
+    domain: mqtt
+    device_id: 2f51ff75b241655f91918339d48ab75f
+    type: action
+    subtype: down_hold
+    discovery_id: 0x0017880103cbbd22 action_down_hold
+    id: woonkamer_dim_down
+  - platform: device
+    domain: mqtt
+    device_id: 2f51ff75b241655f91918339d48ab75f
+    type: action
+    subtype: up_hold_release
+    discovery_id: 0x0017880103cbbd22 action_up_hold_release
+    id: woonkamer_dim_up_release
+  - platform: device
+    domain: mqtt
+    device_id: 2f51ff75b241655f91918339d48ab75f
+    type: action
+    subtype: down_hold_release
+    discovery_id: 0x0017880103cbbd22 action_down_hold_release
+    id: woonkamer_dim_down_release
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: woonkamer_dim_up
+      sequence:
+      - repeat:
+          while:
+          - condition: trigger
+            id: woonkamer_dim_up
+          sequence:
+          - service: light.turn_on
+            data:
+              transition: 1
+              brightness_step_pct: 5
+            target:
+              entity_id: light.woonkamer
+    - conditions:
+      - condition: trigger
+        id: woonkamer_dim_down
+      sequence:
+      - repeat:
+          while:
+          - condition: trigger
+            id: woonkamer_dim_down
+          sequence:
+          - service: light.turn_on
+            data:
+              transition: 1
+              brightness_step_pct: 5
+            target:
+              entity_id: light.woonkamer
+  mode: restart

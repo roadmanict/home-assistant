@@ -1,0 +1,508 @@
+- id: '1672160414848'
+  name: Woonkamer Werken
+  entities:
+    light.lamp_bureau_plant:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 5376
+      color_temp: 186
+      hs_color:
+      - 27.604
+      - 14.363
+      rgb_color:
+      - 255
+      - 235
+      - 218
+      xy_color:
+      - 0.358
+      - 0.345
+      friendly_name: Lamp Bureau Plant
+      supported_features: 44
+      state: 'on'
+    light.lamp_charlie:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      friendly_name: Lamp Charlie
+      supported_features: 44
+      state: 'on'
+    light.lamp_eettafel:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 3731
+      color_temp: 268
+      hs_color:
+      - 26.973
+      - 39.973
+      rgb_color:
+      - 255
+      - 198
+      - 153
+      xy_color:
+      - 0.438
+      - 0.369
+      friendly_name: Lamp Eettafel
+      supported_features: 44
+      state: 'on'
+    light.lamp_geert:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 3891
+      color_temp: 257
+      hs_color:
+      - 26.868
+      - 36.88
+      rgb_color:
+      - 255
+      - 203
+      - 160
+      xy_color:
+      - 0.427
+      - 0.368
+      friendly_name: Lamp Geert
+      supported_features: 44
+      state: 'on'
+    light.lamp_heleen:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 5376
+      color_temp: 186
+      hs_color:
+      - 27.604
+      - 14.363
+      rgb_color:
+      - 255
+      - 235
+      - 218
+      xy_color:
+      - 0.358
+      - 0.345
+      friendly_name: Lamp Heleen
+      supported_features: 44
+      state: 'on'
+    light.lamp_spot_bureau:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 5376
+      color_temp: 186
+      hs_color:
+      - 27.604
+      - 14.363
+      rgb_color:
+      - 255
+      - 235
+      - 218
+      xy_color:
+      - 0.358
+      - 0.345
+      friendly_name: Lamp Spot Bureau
+      supported_features: 44
+      state: 'on'
+    light.0x0017880104aa99c1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 3846
+      color_temp: 260
+      hs_color:
+      - 26.895
+      - 37.733
+      rgb_color:
+      - 255
+      - 201
+      - 158
+      xy_color:
+      - 0.431
+      - 0.367
+      friendly_name: Lamp TV
+      supported_features: 44
+      state: 'on'
+  metadata:
+    light.lamp_bureau_plant:
+      entity_only: true
+    light.lamp_charlie:
+      entity_only: true
+    light.lamp_eettafel:
+      entity_only: true
+    light.lamp_geert:
+      entity_only: true
+    light.lamp_heleen:
+      entity_only: true
+    light.lamp_spot_bureau:
+      entity_only: true
+    light.0x0017880104aa99c1:
+      entity_only: true
+  icon: mdi:laptop
+- id: '1672674946596'
+  name: Bank Chill
+  entities:
+    light.lamp_charlie:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 120
+      friendly_name: Lamp Charlie
+      supported_features: 44
+      state: 'on'
+    light.lamp_eettafel:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      friendly_name: Lamp Eettafel
+      supported_features: 44
+      state: 'off'
+    light.lamp_geert:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 120
+      color_temp_kelvin: 2506
+      color_temp: 399
+      hs_color:
+      - 28.859
+      - 72.305
+      rgb_color:
+      - 255
+      - 159
+      - 70
+      xy_color:
+      - 0.546
+      - 0.389
+      friendly_name: Lamp Geert
+      supported_features: 44
+      state: 'on'
+    light.lamp_heleen:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      friendly_name: Lamp Heleen
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 120
+      color_temp_kelvin: 2506
+      color_temp: 399
+      hs_color:
+      - 28.859
+      - 72.305
+      rgb_color:
+      - 255
+      - 159
+      - 70
+      xy_color:
+      - 0.546
+      - 0.389
+      state: 'on'
+    light.lamp_spot_bureau:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 120
+      color_temp_kelvin: 2506
+      color_temp: 399
+      hs_color:
+      - 28.859
+      - 72.305
+      rgb_color:
+      - 255
+      - 159
+      - 70
+      xy_color:
+      - 0.546
+      - 0.389
+      friendly_name: Lamp Spot Bureau
+      supported_features: 44
+      state: 'on'
+    light.0x0017880104aa99c1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 120
+      color_temp_kelvin: 2506
+      color_temp: 399
+      hs_color:
+      - 28.859
+      - 72.305
+      rgb_color:
+      - 255
+      - 159
+      - 70
+      xy_color:
+      - 0.546
+      - 0.389
+      friendly_name: Lamp TV
+      supported_features: 44
+      state: 'on'
+    light.lamp_bureau_plant:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      friendly_name: Lamp Bureau Plant
+      supported_features: 44
+      state: 'off'
+  metadata:
+    light.lamp_charlie:
+      entity_only: true
+    light.lamp_eettafel:
+      entity_only: true
+    light.lamp_geert:
+      entity_only: true
+    light.lamp_heleen:
+      entity_only: true
+    light.lamp_spot_bureau:
+      entity_only: true
+    light.0x0017880104aa99c1:
+      entity_only: true
+    light.lamp_bureau_plant:
+      entity_only: true
+  icon: mdi:sofa
+- id: '1672675384439'
+  name: Licht overdag
+  entities:
+    light.woonkamer:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - channel_change
+      - finish_effect
+      - okay
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      - color_temp
+      color_mode: color_temp
+      brightness: 225
+      color_temp_kelvin: 3649
+      color_temp: 274
+      hs_color:
+      - 27.037
+      - 41.629
+      rgb_color:
+      - 255
+      - 196
+      - 148
+      xy_color:
+      - 0.444
+      - 0.371
+      entity_id:
+      - light.lamp_geert
+      - light.lamp_charlie
+      - light.0x0017880104aa99c1
+      - light.lamp_heleen
+      - light.lamp_eettafel
+      - light.lamp_bureau_plant
+      - light.lamp_spot_bureau
+      icon: mdi:lightbulb-group
+      friendly_name: Woonkamer
+      supported_features: 44
+      state: 'on'
+  metadata:
+    light.woonkamer:
+      entity_only: true
+  icon: mdi:sun-clock
+- id: '1672675451636'
+  name: Licht s`Avonds
+  entities:
+    light.woonkamer:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - channel_change
+      - finish_effect
+      - okay
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      - color_temp
+      color_mode: color_temp
+      brightness: 165
+      color_temp_kelvin: 3021
+      color_temp: 331
+      hs_color:
+      - 27.791
+      - 56.328
+      rgb_color:
+      - 255
+      - 177
+      - 111
+      xy_color:
+      - 0.495
+      - 0.382
+      entity_id:
+      - light.lamp_geert
+      - light.lamp_charlie
+      - light.0x0017880104aa99c1
+      - light.lamp_heleen
+      - light.lamp_eettafel
+      - light.lamp_bureau_plant
+      - light.lamp_spot_bureau
+      icon: mdi:lightbulb-group
+      friendly_name: Woonkamer
+      supported_features: 44
+      state: 'on'
+  icon: mdi:sun-clock-outline
+  metadata:
+    light.woonkamer:
+      entity_only: true
