@@ -298,8 +298,6 @@
       - stop_effect
       supported_color_modes:
       - color_temp
-      friendly_name: Lamp Heleen
-      supported_features: 44
       color_mode: color_temp
       brightness: 120
       color_temp_kelvin: 2506
@@ -314,6 +312,8 @@
       xy_color:
       - 0.546
       - 0.389
+      friendly_name: Lamp Heleen
+      supported_features: 44
       state: 'on'
     light.lamp_spot_bureau:
       min_color_temp_kelvin: 2000
@@ -346,37 +346,6 @@
       friendly_name: Lamp Spot Bureau
       supported_features: 44
       state: 'on'
-    light.0x0017880104aa99c1:
-      min_color_temp_kelvin: 2000
-      max_color_temp_kelvin: 6666
-      min_mireds: 150
-      max_mireds: 500
-      effect_list:
-      - blink
-      - breathe
-      - okay
-      - channel_change
-      - finish_effect
-      - stop_effect
-      supported_color_modes:
-      - color_temp
-      color_mode: color_temp
-      brightness: 120
-      color_temp_kelvin: 2506
-      color_temp: 399
-      hs_color:
-      - 28.859
-      - 72.305
-      rgb_color:
-      - 255
-      - 159
-      - 70
-      xy_color:
-      - 0.546
-      - 0.389
-      friendly_name: Lamp TV
-      supported_features: 44
-      state: 'on'
     light.lamp_bureau_plant:
       min_color_temp_kelvin: 2000
       max_color_temp_kelvin: 6666
@@ -394,6 +363,37 @@
       friendly_name: Lamp Bureau Plant
       supported_features: 44
       state: 'off'
+    light.lamp_tv:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6666
+      min_mireds: 150
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      friendly_name: Lamp TV
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 120
+      color_temp_kelvin: 2506
+      color_temp: 399
+      hs_color:
+      - 28.859
+      - 72.305
+      rgb_color:
+      - 255
+      - 159
+      - 70
+      xy_color:
+      - 0.546
+      - 0.389
+      state: 'on'
   metadata:
     light.lamp_charlie:
       entity_only: true
@@ -405,9 +405,9 @@
       entity_only: true
     light.lamp_spot_bureau:
       entity_only: true
-    light.0x0017880104aa99c1:
-      entity_only: true
     light.lamp_bureau_plant:
+      entity_only: true
+    light.lamp_tv:
       entity_only: true
   icon: mdi:sofa
 - id: '1672675384439'
