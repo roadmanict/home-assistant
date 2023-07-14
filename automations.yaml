@@ -242,3 +242,90 @@
             target:
               entity_id: light.woonkamer
   mode: restart
+- id: '1673980143389'
+  alias: CO2 Alarm
+  description: ''
+  trigger:
+  - type: carbon_dioxide
+    platform: device
+    device_id: 9bb859f23b19e6e781f207ff3143e857
+    entity_id: sensor.awair_element_82228_carbon_dioxide
+    domain: sensor
+    above: 900
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition:
+  - condition: time
+    after: 00:09:00
+    before: 00:22:00
+    enabled: false
+  action:
+  - service: notify.mobile_app_iphone_van_geert
+    data:
+      message: CO2 te hoog
+  mode: single
+- id: '1675674914974'
+  alias: Morgen wasdag?
+  description: ''
+  trigger:
+  - platform: time
+    at: '20:00:00'
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: weather.home
+      state: rainy
+  action:
+  - service: notify.mobile_app_iphone_van_geert
+    data:
+      message: Morgen misschien wasdag?
+  mode: single
+- id: '1686603579179'
+  alias: Huis afkoelen
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.binnen_warmer
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition: []
+  action:
+  - device_id: 5c828a80779d75b430fc4ff6d3af1b5f
+    domain: mobile_app
+    type: notify
+    message: Huis afkoelen!
+  mode: single
+- id: '1686726764927'
+  alias: Toggle binnen warmer
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.temperature_difference_home
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: "{{\n  states('sensor.temperature_difference_home') < 0\n}}\n"
+      sequence:
+      - service: homeassistant.turn_on
+        data: {}
+        target:
+          entity_id: input_boolean.binnen_warmer
+    - conditions:
+      - condition: template
+        value_template: "{{\n  states('sensor.temperature_difference_home') >= 0\n}}\n"
+      sequence:
+      - service: homeassistant.turn_off
+        data: {}
+        target:
+          entity_id: input_boolean.binnen_warmer
+  mode: single

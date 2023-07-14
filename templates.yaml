@@ -1,0 +1,8 @@
+- sensor:
+  - name: "Temperature difference home"
+    unit_of_measurement: "°C"
+    state: >
+      {% set inside = states('sensor.awair_element_82228_temperature') | float %}
+      {% set outside = states('sensor.temperature') | float %}
+
+      {{ (outside - inside) | round(1, default=0) }}
